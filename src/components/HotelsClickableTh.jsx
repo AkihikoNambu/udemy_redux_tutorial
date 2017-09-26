@@ -20,9 +20,12 @@ HotelsClickableTh.propTypes = {
   setSortKey: PropTypes.func.isRequired,
 };
 
-export default connect(
-  (state, ownProps) => ({
-    isSelected: ownProps.sortKey === state.sortKey,
-  }),
-  { setSortKey },
-)(HotelsClickableTh);
+const mapStateToProps = (state, ownProps) => (
+  { isSelected: ownProps.sortKey === state.sortKey }
+);
+
+// const mapDispatchToProps = dispatch => {
+//   setSortKey: () => { setSortKey() }
+// }
+
+export default connect(mapStateToProps, { setSortKey })(HotelsClickableTh);

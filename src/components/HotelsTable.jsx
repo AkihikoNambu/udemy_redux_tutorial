@@ -21,7 +21,10 @@ const HotelsTable = ({ hotels }) => (
           sortKey="reviewAverage"
         />
         <th>レビュー件数</th>
-        <th>距離</th>
+        <HotelsClickableTh
+          label="距離"
+          sortKey="distance"
+        />
       </tr>
       {hotels.map(hotel => (<HotelRow key={hotel.id} hotel={hotel} />))}
     </tbody>

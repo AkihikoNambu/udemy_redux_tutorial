@@ -47,8 +47,8 @@ SearchPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  geocodeResult: state.geocodeResult,
-});
+function mapStateToProps(state) {
+  return { geocodeResult: state.geocodeResult };
+}
 
 export default connect(mapStateToProps)(SearchPage);

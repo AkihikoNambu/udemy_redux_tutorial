@@ -34,9 +34,8 @@ SearchForm.propTypes = {
   history: PropTypes.shape({ push: PropTypes.func }).isRequired,
 };
 
-export default connect(
-  state => ({
-    place: state.place,
-  }),
-  { setPlace, startSearch },
-)(SearchForm);
+function mapStateToProps(state) {
+  return { place: state.place };
+}
+
+export default connect(mapStateToProps, { setPlace, startSearch })(SearchForm);
